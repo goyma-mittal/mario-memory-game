@@ -1,0 +1,58 @@
+.termpage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  background-image: url('../../../assets/images/backgrounds/homepage.png');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  padding: 1rem;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.terms {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.65);
+  color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  text-align: left;
+  font-size: 0.6rem;
+  line-height: 1.6;
+}
+
+.terms h2 {
+  font-size: 1rem;
+  color: #ff4c4c;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.terms p {
+  margin-bottom: 1rem;
+}
+
+.terms ul {
+  list-style-type: square;
+  padding-left: 2rem;
+}
+
+.terms li {
+  margin-bottom: 0.8rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+  .terms {
+    padding: 1.2rem;
+    font-size: 0.5rem;
+  }
+
+  .terms h2 {
+    font-size: 0.8rem;
+  }
+}

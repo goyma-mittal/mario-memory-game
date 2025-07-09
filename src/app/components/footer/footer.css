@@ -1,0 +1,50 @@
+
+.footer {
+ padding: 1rem;
+  text-align: center;
+  color: #fff;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.6rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+}
+
+.links {
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.links button {
+  background-color: #e01818;
+  border: none;
+  border-radius: 12px;
+  padding: 0.5rem 1.4rem;
+  font-size: 0.55rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px #b91414;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.links button:hover {
+  background-color: #c01616;
+  transform: scale(1.05);
+}
+
+/* Responsive Footer for Small Screens */
+@media (max-width: 480px) {
+  .footer {
+    font-size: 0.5rem;
+    padding: 0.8rem;
+  }
+
+  .links button {
+    font-size: 0.5rem;
+    padding: 0.4rem 1rem;
+  }
+}

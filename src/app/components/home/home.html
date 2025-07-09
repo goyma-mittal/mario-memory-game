@@ -1,0 +1,38 @@
+<div class="homepage">
+  <div class='head'>
+    <app-header></app-header>
+  </div>
+  <div class="home-container">
+
+    <ng-container *ngIf="!currentUser; else loggedInTemplate">
+      <div class="welcome-box">
+        <h2 class="title">Welcome to the MARIO MEMORY CARD GAME !</h2>
+        <p class="subtitle">Please log in or register to play.</p>
+        <div class="auth-buttons">
+          <button class="mario-btn" (click)="onLogin()">Login</button>
+          <button class="mario-btn" (click)="onRegister()">Register</button>
+        </div>
+      </div>
+    </ng-container>
+
+
+    <ng-template #loggedInTemplate>
+      <div class="welcome-box">
+        <h2 class="title">
+          Welcome back, <span class="username">{{ currentUser?.username }}</span>!
+        </h2>
+        <div class="stats">
+          <p>Total Levels Played: {{ totalLevelsPlayed }}</p>
+          <p>Total Stars Earned: {{ totalStarsEarned }}</p>
+        </div>
+        <button class="mario-btn" (click)="onPlay()">▶ Play</button>
+      </div>
+    </ng-template>
+
+  </div>
+  <div class="foot">
+    <app-footer></app-footer>
+  </div>
+
+
+</div>

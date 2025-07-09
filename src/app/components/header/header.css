@@ -1,0 +1,95 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.5rem;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+
+  font-family: 'Press Start 2P', cursive;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.game-title {
+   font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.username {
+  font-size: 0.7rem;
+  color: #ffffff;
+  margin-right: 0.5rem;
+}
+
+.leaderboard,
+.logout {
+  background-color: #e01818;
+  border: none;
+  border-radius: 16px;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.6rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px #b91414;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.leaderboard:hover,
+.logout:hover {
+  background-color: #c01616;
+  transform: scale(1.05);
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 1rem;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .game-title {
+    font-size: 0.75rem;
+  }
+
+  .username {
+    font-size: 0.6rem;
+  }
+
+  .leaderboard,
+  .logout {
+    font-size: 0.55rem;
+    padding: 0.4rem 0.8rem;
+  }
+}

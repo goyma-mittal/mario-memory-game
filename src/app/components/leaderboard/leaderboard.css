@@ -1,0 +1,97 @@
+.leaderboardpage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  background-image: url('../../../assets/images/backgrounds/homepage.png');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  padding: 1rem;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.head, .foot {
+  width: 100%;
+}
+
+/* CONTAINER */
+.leaderboard-container {
+  flex: 1;
+  padding: 2.2rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  max-width: 950px;
+  margin: 2rem auto;
+  color: white;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.9);
+  text-align: center;
+}
+
+.leaderboard-container h2 {
+  font-size: 1.2rem;
+  color: #ffd700;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px #000;
+}
+
+/* TABLE */
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.7rem;
+  margin-top: 1rem;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  padding: 0.85rem;
+  text-align: center;
+  border: 1px solid #ffffff;
+}
+
+.leaderboard-table th {
+  background-color: #e01818;
+  color: #fff;
+  text-shadow: 1px 1px #000;
+}
+
+.leaderboard-table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+.leaderboard-table tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.leaderboard-table td {
+  color: #ffd700;
+  font-weight: 500;
+}
+
+.leaderboard-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: scale(1.01);
+  transition: all 0.2s ease;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .leaderboard-container {
+    padding: 1.2rem;
+  }
+
+  .leaderboard-table {
+    font-size: 0.58rem;
+  }
+
+  .leaderboard-container h2 {
+    font-size: 0.95rem;
+  }
+
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: 0.6rem;
+  }
+}

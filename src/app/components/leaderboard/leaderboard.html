@@ -1,0 +1,31 @@
+<div class="leaderboardpage">
+  <div class="head">
+    <app-header></app-header>
+  </div>
+
+  <div class="leaderboard-container">
+    <h2>Leaderboard</h2>
+    <table class="leaderboard-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Username</th>
+          <th>Levels Completed</th>
+          <th>Total Stars</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of leaderboard; index as i">
+          <td>{{ i + 1 }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ levelsCompleted(user) }}</td>
+          <td>{{ totalStars(user) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="foot">
+    <app-footer></app-footer>
+  </div>
+</div>

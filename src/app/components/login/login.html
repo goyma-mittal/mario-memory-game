@@ -1,0 +1,49 @@
+<div class="loginpage">
+
+
+    <div class='head'>
+        <app-header></app-header>
+    </div>
+
+    <div class="login-container">
+        <div class="login-box">
+            <h2 class="title">Login </h2>
+
+
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" formControlName="email" />
+                    <div *ngIf="loginForm.controls.email.invalid && loginForm.controls.email.touched" class="error">
+                        Valid email is required.
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" formControlName="password" />
+                    <div *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched"
+                        class="error">
+                        Password is required.
+                    </div>
+                </div>
+
+
+                <button class="mario-btn" type="submit" [disabled]="loginForm.invalid">Login</button>
+            </form>
+
+            <p *ngIf="errorMsg" class="error-msg">{{ errorMsg }}</p>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="foot">
+        <app-footer></app-footer>
+    </div>
+
+</div>

@@ -1,0 +1,55 @@
+<!-- <div class="level-selection-page">
+    <div class="head">
+        <app-header></app-header>
+    </div>
+
+    <div class="level-container">
+        <h2>Select a Level</h2>
+
+        <div class="level-grid">
+            <div class="level-card" *ngFor="let level of levels" [class.locked]="level.isLocked"
+                (click)="selectLevel(level)">
+                <div class="level-number">Level {{ level.levelNumber }}</div>
+
+                <div class="stars">
+                    <span class="star" *ngFor="let filled of getStarsArray(level.levelNumber)"
+                        [class.filled]="filled === 1">★</span>
+                </div>
+
+                <div class="lock-icon" *ngIf="level.isLocked">🔒</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="foot">
+        <app-footer></app-footer>
+    </div>
+</div> -->
+
+<div class="levelpage">
+    <div class="head">
+        <app-header></app-header>
+    </div>
+
+    <div class="level-container">
+        <h2>Select a Level</h2>
+
+        <div class="level-grid">
+            <div class="level-card" *ngFor="let level of levels" [class.locked]="level.isLocked"
+                [ngClass]="{ 'animate-unlock': shouldAnimate(level) }" (click)="selectLevel(level)">
+                <div class="level-number">Level {{ level.levelNumber }}</div>
+
+                <div class="stars">
+                    <span class="star" *ngFor="let filled of getStarsArray(level.levelNumber)"
+                        [ngClass]="{ 'filled': filled === 1, 'empty': filled === 0 }"></span>
+                </div>
+
+               <div class="lock-icon" *ngIf="level.isLocked"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="foot">
+        <app-footer></app-footer>
+    </div>
+</div>

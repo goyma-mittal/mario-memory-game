@@ -1,0 +1,41 @@
+
+<div class="gamepage">
+  <div class="head">
+    <app-header></app-header> 
+  </div>
+
+  <div class="game-container">
+    <h1 class="level-info">Level {{ levelId }}</h1>
+    <h2 class="timer">⏱️ Time: {{ timer }}s</h2>
+
+    <div class="grid" [style.gridTemplateColumns]="'repeat(' + cols + ', 1fr)'">
+      <div class="card" *ngFor="let card of gameGrid" [attr.data-name]="card.name" (click)="onCardClick($event)">
+        <div class="card-inner">
+          <div class="card-front"></div>
+          <div class="card-back">
+            <img [src]="'../../../assets/images/characters/' + card.img" [alt]="card.name" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <div class="win-modal" *ngIf="showWinModal">
+    <div class="modal-content">
+      <h2>🎉 Level Completed!</h2>
+      <div class="stars-earned">
+        <span *ngFor="let s of [1,2,3]">
+          <img
+            [src]="s <= starsEarned ? '../../../assets/images/stars/filled_star.png' : '../../../assets/images/stars/empty_star.png'"
+            width="40" />
+        </span>
+      </div>
+      <p>You finished in {{ timer }} seconds!</p>
+      <button class="mario-btn" (click)="nextLevel()">Back to Levels</button>
+    </div>
+  </div>
+
+  <div class="foot">
+    <app-footer></app-footer>
+  </div>
+</div>

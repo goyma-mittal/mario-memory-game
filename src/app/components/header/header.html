@@ -1,0 +1,12 @@
+<header class="header">
+  <div class="left">
+   <a href="/home"> <img src="../../../assets/images/logo/mario_logo.png" alt="Mario Logo" class="logo" />
+    </a>
+    <span class="game-title">Mario Memory Game</span>
+  </div>
+  <div class="right" *ngIf="currentUser">
+    <span class="username">👤 {{ currentUser.username }}</span>
+     <button class="leaderboard" (click)="toleaderboard()">Leaderboard</button>
+    <button class="logout" (click)="logout()">Logout</button>
+  </div>
+</header>

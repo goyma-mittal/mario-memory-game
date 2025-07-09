@@ -1,0 +1,159 @@
+.levelpage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  background-image: url('../../../assets/images/backgrounds/levelpage.png');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  padding: 1rem;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.head,
+.foot {
+  width: 100%;
+}
+
+.level-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 1rem;
+}
+
+.level-container h2 {
+  font-size: 1.5rem;
+  color: #fff700;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px #000;
+  text-align: center;
+}
+
+.level-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1000px;
+  padding: 1rem;
+}
+
+.level-card {
+  position: relative;
+  background-color: #1e1e1e;
+  border: 4px solid #ffffff;
+  border-radius: 16px;
+  padding: 1.2rem;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, opacity 0.3s ease;
+}
+
+.level-card:hover {
+  transform: scale(1.05);
+  background-color: #333;
+}
+
+.level-card.locked {
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: not-allowed;
+  filter: grayscale(0.9);
+  opacity: 0.6;
+}
+
+.level-card.animate-unlock {
+  animation: unlockPulse 1s ease-out;
+  border-color: #00ffcc;
+  box-shadow: 0 0 20px #00ffcc;
+}
+
+@keyframes unlockPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0px transparent;
+  }
+
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #00ffcc;
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0px transparent;
+  }
+}
+
+.level-number {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  color: #00ffff;
+  text-shadow: 1px 1px #000;
+}
+
+.star {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+.star.filled {
+  background-image: url('../../../assets/images/stars/filled_star.png');
+}
+
+.star.empty {
+  background-image: url('../../../assets/images/stars/empty_star.png');
+}
+
+.lock-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  background-image: url('../../../assets/images/stars/lock.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+@media (max-width: 600px) {
+  .level-container {
+    padding: 1rem 0.5rem;
+  }
+
+  .level-container h2 {
+    font-size: 1rem;
+  }
+
+  .level-grid {
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .level-card {
+    padding: 1rem;
+  }
+
+  .level-number {
+    font-size: 0.8rem;
+  }
+
+  .star {
+    font-size: 1rem;
+  }
+
+  .lock-icon {
+    width: 20px;
+    height: 20px;
+  }
+}

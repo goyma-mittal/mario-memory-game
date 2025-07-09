@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router ,RouterOutlet ,NavigationEnd  } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,7 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-  protected title = 'mario-memory-game';
+ title = 'mario-memory-game';
+     ngOnInit(): void {}
+ 
 }
